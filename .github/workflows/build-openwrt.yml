@@ -113,8 +113,8 @@ jobs:
     #   if: (!cancelled())
     #   run: df -hT
 
-    - name: cd openwrt
-      run: cd openwrt
+    # - name: cd openwrt
+    #   run: cd openwrt
 
     - name: Upload bin directory
       uses: actions/upload-artifact@main
@@ -122,7 +122,7 @@ jobs:
       with:
         # name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         name: config_file
-        path: ./1.config
+        path: /home/runner/work/Openwrt-Config-File-Generator/Openwrt-Config-File-Generator/openwrt/1.config
 
     # - name: Organize files
     #   id: organize
