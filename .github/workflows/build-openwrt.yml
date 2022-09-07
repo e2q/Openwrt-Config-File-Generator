@@ -113,16 +113,16 @@ jobs:
     #   if: (!cancelled())
     #   run: df -hT
 
-    - name: cd openwrt
-      run: cd openwrt
+    - name: Tar files
+      run: tar -cvf my_files.tar openwrt/.config
 
     - name: Upload bin directory
-      uses: actions/upload-artifact@main
+      uses: actions/upload-artifact@v3
       # if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
         # name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         name: config_file
-        path: 1.config
+        path: my_files.tar
 
     # - name: Organize files
     #   id: organize
