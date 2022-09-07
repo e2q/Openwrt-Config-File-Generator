@@ -113,8 +113,8 @@ jobs:
     #   if: (!cancelled())
     #   run: df -hT
 
-    # - name: cd openwrt
-    #   run: cd openwrt
+    - name: cd openwrt
+      run: cd openwrt
 
     - name: Upload bin directory
       uses: actions/upload-artifact@main
